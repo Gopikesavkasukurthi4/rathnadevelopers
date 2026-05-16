@@ -14,11 +14,23 @@ public class DataLoader {
     CommandLineRunner init(UserRepository repo) {
         return args -> {
 
-            if (repo.count() == 0) {
+            User existing = repo.findByEmail("admin@gmail.com");
+
+            if (existing == null) {
+
                 User user = new User();
                 user.setEmail("admin@gmail.com");
                 user.setPassword("1234");
+
                 repo.save(user);
+
+                System.out.println("ADMIN CREATED");
+            } else {
+
+                existing.setPassword("1234");
+                repo.save(existing);
+
+                System.out.println("PASSWORD RESET");
             }
         };
     }
