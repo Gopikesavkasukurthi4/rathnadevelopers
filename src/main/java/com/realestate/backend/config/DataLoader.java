@@ -14,9 +14,9 @@ public class DataLoader {
     CommandLineRunner init(UserRepository repo) {
         return args -> {
 
-            if (repo.count() == 0) {
-                User user = new User();
-                user.setEmail("admin@gmail.com");
+            User user = repo.findByEmail("admin@gmail.com");
+
+            if(user != null){
                 user.setPassword("1234");
                 repo.save(user);
             }
