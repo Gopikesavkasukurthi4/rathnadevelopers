@@ -13,7 +13,7 @@ import com.realestate.backend.service.PropertyService;
 
 @RestController
 @RequestMapping("/api/properties")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class PropertyController {
 
     @Autowired

@@ -12,7 +12,7 @@ import com.realestate.backend.service.EnquiryService;
 
 @RestController
 @RequestMapping("/api/enquiries")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class EnquiryController {
 
     @Autowired

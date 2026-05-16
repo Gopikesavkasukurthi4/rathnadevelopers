@@ -9,7 +9,7 @@ import com.realestate.backend.service.DashboardService;
 
 @RestController
 @RequestMapping("/api/dashboard")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class DashboardController {
 
     @Autowired
